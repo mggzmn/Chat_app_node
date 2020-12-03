@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-    
     <div class="chat">
       <div class="chat__sidebar">
         <h1>Chat App</h1>
@@ -16,7 +15,13 @@
         <div id="messages" class="chat__messages"></div>
         <div class="compose">
           <form id="message-form">
-            <input name="message" type="text" placeholder="message" />
+            <input
+              name="message"
+              type="text"
+              placeholder="message"
+              required
+              autocomplete="off"
+            />
             <button>Send</button>
           </form>
           <button id="send-location">Send Location</button>
@@ -27,7 +32,7 @@
     <script id="message-template" type="text/html">
       <div class="message">
         <p>
-          <span class="message__name">User Name</span>
+          <span class="message__name">{{username}}</span>
           <span class="message_meta">{{createdAt}}</span>
         </p>
         <p>{{message}}</p>
@@ -36,7 +41,7 @@
     <script id="location-template" type="text/html">
       <div>
         <p class="message">
-          <span class="message__name">User Name</span>
+          <span class="message__name">{{username}}</span>
           <span class="message_meta">{{createdAt}}</span>
         </p>
         <p>
